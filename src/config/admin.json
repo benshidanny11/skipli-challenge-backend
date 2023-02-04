@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "skipli-coding-challenge-27540",
+  "private_key_id": "fb29b892bca69d2a472f57e1fa142952b96cf9ea",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCwWkaxLcorjw4P\nWz7GwGOWpjCNxNFDKpk3yudRaBTausnqvoNJpUy8cog92ifLYJVmV88Ar1cGhEco\nZvgofCnQloDWVJoj5SuQEam20FGnLJxG2T4mH7rTKxcBSyPEtTZHFYPljni8Fkri\nYWKwbNpvNE8Ti04CUUCsN8VJ2dXtlquvnvr9tdj3ctpidTjARNck3Qx493WBZG3S\nEn5Vy3mO3QFHedFmi2Tmg5DgeyDF6XKJmls1lN/NuPcFxIrVdiVCN5LaxNuot7tp\nBaBQu8lc9Hszfwxm0t57wibNSMftJa8B/Kg3+e4e3IAfU85uy5ATcEZLdN/hj17j\nhWvVPAhVAgMBAAECggEAAcURXMAI/XfrKOdLBLAzyUEnHDBQXOkY1L3O2K4y0ceH\nG2ziOpzgkMTIR9dtIWlGOcE1POk4ww8UlO8eAjxnKDmicF3OY2bU3mMqMPRiC8uM\nUL+0YN1eDbZEfe+IAkNC5XxUFwhffzYgD6m97xq6J6lYOjavLggshHq8ANPUheGP\nBP4bABQcdNyzrF7ZyfsupUJAkFAxmsC1zRMVayJ1KIi9G545RyaGFDHj54xYmIIX\nvOX0aF0bbjVC2qtMc/y2L/SOdTe3AvGoQh2hsbmldrm6vwtLAX6RMKS7wgkSglAy\nFQ48t72oKPGqC/7WyecCPVzqswkDXcDwV7dtdaMzfwKBgQDupCSdZURd1clw2rBw\nYuE7rUiF316ScpoxyObEgiMDdKqAkEiNh7RQ/TJwbwxTpmS1fVECkVaKElq5iZOK\nejmvXqIvoyaMHaT6qhvCzYQDnei7MiluqrdqfRjiDjr+5KvvHFj6SIWLWZK6MKIe\nm5LrEoARZjG43YEz+zZsRNx7/wKBgQC9LjobCt+82ESqE4ifZ6MevXzZ/NRu2lqy\nmlKTA09KUQqq7O763CddlhxE0lUsJzrX/JB1DG+dRHXDwm2E0ZPQl/od06Js3mG6\nVXlBcjFGyeh/DVi16UTfsSfE+PXUe3QvbpCUD03P82cz8intgLRTvguziE7eKfcC\nccJWiF7LqwKBgH/pi5ayCQsi5G6RSbFzzrZmE1FugQqOUwgMX2VFO+9GQX3X2IvE\nCWq/zKFnZHwR3DlLiniN3ozzeZ2pmGPJT9IoL1bJZIgF+8BAHdE0x2YI5g4wvPSM\nnPN/Si8g4Y5uk5n+39KHvM0MnhEesEcnrIBD0lGBLXWhhPeP14QBBQ2RAoGAQUW1\n3qa905Z6+oOK3BUR/wU6EqxdT3IfYQhF/Vti/C1CFP9y5TMYkf28+zHnGTjf4K3P\n2dLUn9qDF2v6BZ2Z9pq5PZlLrWx9I6FiGOahgd8gTNX6CanWjae+JQQRLaL6z3LC\nh5NQMbO1pAKl3MBPd6VWvDcHnzezdjBx8RFUQ8kCgYEAzehhAq5miRNQblBcgW0/\n43ATJp66kLIF8Sigih/Ti0eVmbo5J4ruu59aGffxwsdEaSVHZQLQGURQ3ug0vUj7\n+rDxF0P2D30crr4CVXGo8D98ymRPCjysukYVzTbsMWCPzTi7NZcykOjLGmvNIRfl\nscMR1ZdjBC2uEM//dIpHgaM=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-4mp64@skipli-coding-challenge-27540.iam.gserviceaccount.com",
+  "client_id": "104461846348828526373",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-4mp64%40skipli-coding-challenge-27540.iam.gserviceaccount.com"
+}
