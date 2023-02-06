@@ -41,18 +41,26 @@ module.exports = UserController = {
     }
   },
   ValidateAccessCode: async (req, res) => {
-    const { accessCode, phoneNumber } = req.body;
-    const userData= await getUserData(userDataCollection,phoneNumber);
-    const fields = userData.data();
-    if (accessCode == fields.accessCode) {
-      await userDataCollection.doc(userData.id).update({"accessCode": filedValue.delete()});
-      res.status(200).send({
-        success: true,
-      });
-    }else {
-      res.status(400).send({
+    try{
+      const { accessCode, phoneNumber } = req.body;
+      const userData= await getUserData(userDataCollection,phoneNumber);
+      const fields = userData?.data();
+      if (accessCode == fields?.accessCode) {
+        await userDataCollection.doc(userData.id).update({"accessCode": filedValue.delete()});
+        res.status(200).send({
+          success: true,
+        });
+      }else {
+        res.status(400).send({
+          success: false,
+        });  
+      }
+    }catch(e){
+      console.log(error)
+      res.status(500).send({
         success: false,
-      });  
+      }); 
     }
+   
   },
 };

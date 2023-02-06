@@ -4,17 +4,32 @@ const { getUserData, getGitUser } = require("../helpers/appHelpers");
 const dotenv = require("dotenv");
 const userDataCollection = db.collection("users");
 dotenv.config();
+const header = { Authorization: `Token ${process.env.GIT_TOKEN}` };
 module.exports = GithubController = {
   searchUsers: async (req, res) => {
     const { query, page, per_page } = req.query;
     try {
       const response = await axios.get(
-        `https://api.github.com/search/users?q=${query}&page=${page}&per_page=${per_page}`
+        `https://api.github.com/search/users?q=${query}&page=${page}&per_page=${per_page}`,
+        { headers: header }
       );
+      let index = 0;
+
+      const gitHubUsers = [];
+      while (index < response.data.items.length) {
+        const userRes = await axios.get(
+          `https://api.github.com/user/${response.data.items[index].id}`,
+          { headers: header }
+        );
+        gitHubUsers.push(userRes.data);
+        index++;
+      }
 
       //Return response
       res.status(200).send({
-        users: response.data.items.filter((user) => user.login.includes(query)),
+        users: gitHubUsers.filter((user) =>
+          user.login.toLowerCase().includes(query.toLowerCase())
+        ),
       });
     } catch (e) {
       console.log(e);
@@ -27,7 +42,10 @@ module.exports = GithubController = {
   getGitubUserProfile: async (req, res) => {
     const { userid } = req.params;
     try {
-      const response = await axios.get(`https://api.github.com/user/${userid}`);
+      const response = await axios.get(
+        `https://api.github.com/user/${userid}`,
+        { headers: header }
+      );
 
       //Return response
       res.status(200).send({
@@ -77,7 +95,8 @@ module.exports = GithubController = {
     }
   },
   getUserProfile: async (req, res) => {
-    const { phone_number } = req.body;
+  const { phone_number } = req.query;
+
     try {
       const user = await getUserData(userDataCollection, phone_number);
       const favoliteUsers = await (
@@ -90,9 +109,13 @@ module.exports = GithubController = {
       favoliteUsers.forEach((user) => dataGithubUsers.push(user.data()));
       let index = 0;
       const completeGithubProfiles = [];
+
       while (index < dataGithubUsers.length) {
+       const id= dataGithubUsers[index].github_user_id;
+
         const response = await axios.get(
-          `https://api.github.com/user/${dataGithubUsers[index].github_user_id}`
+          `https://api.github.com/user/${id}`,
+          { headers: header}
         );
         completeGithubProfiles.push(response.data);
         index++;
@@ -101,6 +124,7 @@ module.exports = GithubController = {
         users: completeGithubProfiles,
       });
     } catch (e) {
+      console.log(e)
       res.status(500).send({
         success: false,
         error: e,

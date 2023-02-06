@@ -1,9 +1,13 @@
 const express=require('express');
 var bodyParser = require("body-parser");
+const cors=require('cors');
+var morgan = require('morgan')
 const UserController=require('./controllers/UserController');
 const GithubController=require('./controllers/GithubController');
 const app = express();
 const port = process.env.PORT || 8080;
+app.use(cors());
+app.use(morgan('dev'))
 app.use(bodyParser.json());
 app.post("/api/createaccesscode",UserController.CreateNewAccessCode);
 app.post("/api/validateaccessescode",UserController.ValidateAccessCode);
