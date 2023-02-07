@@ -14,7 +14,6 @@ module.exports = GithubController = {
         { headers: header }
       );
       let index = 0;
-
       const gitHubUsers = [];
       while (index < response.data.items.length) {
         const userRes = await axios.get(
@@ -24,12 +23,12 @@ module.exports = GithubController = {
         gitHubUsers.push(userRes.data);
         index++;
       }
-
       //Return response
       res.status(200).send({
         users: gitHubUsers.filter((user) =>
           user.login.toLowerCase().includes(query.toLowerCase())
         ),
+        totalRows:response.data.total_count>1000?1000:response.data.total_count
       });
     } catch (e) {
       console.log(e);

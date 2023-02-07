@@ -15,8 +15,6 @@ module.exports = UserController = {
     const client = require("twilio")(accountSid, authToken);
 
     try {
-      // Send SMS to provided
-      //   await sendMessage(data.phone, client, accessCode);
 
       //Save data into firebasea
       const userData=await getUserData(userDataCollection, data.phoneNumber);
@@ -26,8 +24,10 @@ module.exports = UserController = {
       }else{
         await userDataCollection.add(data);
       }
-  
-     
+      if(process.env.NODE_ENV!=='development'){
+      // Send SMS to provided
+        await sendMessage(data.phone, client, accessCode);
+      }
       //Return response
       res.status(201).send({
         success: true,
