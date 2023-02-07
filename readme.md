@@ -2,7 +2,6 @@
 > A challenge project
 ## Built With
 - Languages: Node js(Javascript runtime environment)
-- Framework: React js.
 
 ## Getting started
 To get a local copy of this project, Please follow these simple example steps.
