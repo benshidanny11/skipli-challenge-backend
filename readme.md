@@ -34,7 +34,7 @@ Please remember to set environment variables using .env-example provided
 
 ## Live server
 
-Use (this link)[https://skiplibackend.herokuapp.com/] as backend service. 
+Use [this link](https://skiplibackend.herokuapp.com/) as backend service. 
 
 ## EndPoints
 
