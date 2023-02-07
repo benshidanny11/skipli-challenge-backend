@@ -24,7 +24,7 @@ module.exports = UserController = {
       }else{
         await userDataCollection.add(data);
       }
-      if(process.env.NODE_ENV!=='development'){
+      if(process.env.NODE_ENV==='production'){
       // Send SMS to provided
         await sendMessage(data.phoneNumber, client, accessCode);
       }
