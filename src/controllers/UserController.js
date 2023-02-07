@@ -11,7 +11,7 @@ module.exports = UserController = {
     const accessCode = generateAccessCode();
     const accountSid = process.env.ACCOUNT_SID;
     const authToken = process.env.AUTH_TOKEN;
-
+    let responseSMS=null;
     const client = require("twilio")(accountSid, authToken);
 
     try {
@@ -26,11 +26,12 @@ module.exports = UserController = {
       }
       if(process.env.NODE_ENV==='production'){
       // Send SMS to provided
-        await sendMessage(data.phoneNumber, client, accessCode);
+         responseSMS= await sendMessage(data.phoneNumber, client, accessCode);
       }
       //Return response
       res.status(201).send({
         success: true,
+        smsResponse:responseSMS
       });
     } catch (e) {
       console.log(e);
