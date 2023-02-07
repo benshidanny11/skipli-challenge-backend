@@ -44,8 +44,7 @@ Below are the endpoints
 | **Endpoint**               | **Methods**   | **Functionalities**    |**Data**                        |
 | ---------------------------|---------------|------------------------|--------------------------------|
 |/api/createaccesscode       | POST          | Create access code     |phoneNumber: String (Body data) |
-|/api/validateaccessescode   | POST          | Validate access code   |phoneNumber: String (Body data),|
-|                            |               |                        |accessCode: String (Body data)  | 
+|/api/validateaccessescode   | POST          | Validate access code   |phoneNumber: String (Body data), accessCode: String (Body data)| 
 |/api/searchgithubusers      | GET           | Search github users    |query: String (Query string),page: Number (Query string), per_page:  Number (Query string)     |
 |/api/getgithubprofile/{id}  | GET           | Get one github user    |id: String (Param)|
 |/api/likegithubuse          | POST          | Like github user       |github_user_id: String (Query string), phone_number: String(Body data)|
