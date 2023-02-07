@@ -16,6 +16,8 @@ app.get("/api/getgithubprofile/:userid", GithubController.getGitubUserProfile);
 app.post('/api/likegithubuser',GithubController.likeGithubUser);
 app.get("/api/getuserprofile", GithubController.getUserProfile);
 app.get("/api/getuserprofile", GithubController.getUserProfile);
+app.get('/',(req,res)=>res.send({message:'Hello world!'}))
+app.get('/*',(req,res)=>res.status(404).send({message:'Resource not found!'}))
 
 app.listen(port, () => {
   console.log(`app listening on port ${port}`);
