@@ -26,7 +26,7 @@ module.exports = UserController = {
       }
       if(process.env.NODE_ENV!=='development'){
       // Send SMS to provided
-        await sendMessage(data.phone, client, accessCode);
+        await sendMessage(data.phoneNumber, client, accessCode);
       }
       //Return response
       res.status(201).send({
